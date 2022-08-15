@@ -69,6 +69,9 @@ async function addSum(event) {
   if (Number(qtd[indAdd - 1].value) > data[indAdd - 1].avai) {
     qtd[indAdd - 1].value = Number(data[indAdd - 1].avai);
   }
+  if (Number(qtd[indAdd - 1].value) < 1) {
+    qtd[indAdd - 1].value = 1;
+  }
   if (Number(qtd[indAdd - 1].value) === data[indAdd - 1].avai) return;
   if (indAdd === indInput) {
     qtd[indAdd - 1].value = Number(qtd[indAdd - 1].value) + 1;
@@ -86,11 +89,27 @@ async function subSum(event) {
   if (Number(qtd[indSub - 1].value) > data[indSub - 1].avai) {
     qtd[indSub - 1].value = Number(data[indSub - 1].avai);
   }
+  if (Number(qtd[indSub - 1].value) < 1) {
+    qtd[indSub - 1].value = 1;
+  }
   if (Number(qtd[indSub - 1].value) === 1) return;
   if (indSub === indInput) {
     qtd[indSub - 1].value = Number(qtd[indSub - 1].value) - 1;
     data[indSub - 1].qtd = Number(qtd[indSub - 1].value);
   }
+  sumTotal();
+}
+
+async function subSumInput(event) {
+  const qtd = document.querySelectorAll('.qtd');
+  const inputIndice = await event.target.dataset.idQtd;
+  if (Number(qtd[inputIndice - 1].value) > data[inputIndice - 1].avai) {
+    qtd[inputIndice - 1].value = Number(data[inputIndice - 1].avai);
+  }
+  if (Number(qtd[inputIndice - 1].value) < 1) {
+    qtd[inputIndice - 1].value = 1;
+  }
+  data[inputIndice - 1].qtd = Number(qtd[inputIndice - 1].value);
   sumTotal();
 }
 
@@ -122,6 +141,7 @@ export function Cart() {
                 className='qtd'
                 placeholder={item.qtd}
                 defaultValue={item.qtd}
+                onBlur={subSumInput}
               />
               <button type='button' href='/' className='addQtd'>
                 <Plus data-id-add={item.id} onClick={addSum} />
