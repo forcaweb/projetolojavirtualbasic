@@ -1,0 +1,59 @@
+.footerContainer{
+  background: #fbf7f7;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 4px;
+}
+.footerRelative{
+  position: relative;
+}
+.footerContainer .campsFooter{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #333;
+  font-size: 20px;
+}
+
+.footerContainer .campsFooter a{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #9a9a9a;
+  margin-top: 7px;
+  font-size: 16px;
+  transition: 0.4s all;
+}
+.footerContainer .campsFooter a:hover{
+  color: #fc7070;
+}
+
+.footerContainer .campsFooterCredits{
+  display: flex;
+  position: relative;
+  color: #333;
+  margin-top: 15px;
+  font-size: 12px;
+  flex: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 480px){
+  .footerContainer .campsFooter{
+    margin: 5px;
+    font-size: 18px;
+    flex: 50%;
+  }
+}

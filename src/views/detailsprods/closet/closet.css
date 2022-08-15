@@ -1,0 +1,393 @@
+.detailsContainer{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.detailsContainer form{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.detailsContainer form .imgsAmost{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+}
+
+.detailsContainer form .imgsAmost .miniImgs{
+  width: 100%;
+  width: 80px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
+.detailsContainer form .imgsAmost .miniImgs img{
+  position: relative;
+  display: block;
+  width: 100%;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #e3e3e3;
+  object-fit: contain;
+  padding: 10px;
+  transition: 0.2s all;
+  border-radius: 3px;
+}
+
+.detailsContainer form .imgsAmost .miniImgs img:hover{
+  border: 1px solid #1277f3;
+}
+
+.detailsContainer form .imgsAmost .miniImgs .active{
+  border: 1.5px solid #1277f3;
+}
+
+.detailsContainer form .imgsAmost .largeImgs{
+  flex: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100%;
+}
+.detailsContainer form .imgsAmost .largeImgs img{
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+}
+.detailsContainer form .detailsProduct{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+}
+
+.detailsContainer form .detailsProduct .nameProduct{
+  width: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.detailsContainer form .detailsProduct .priceProduct{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.detailsContainer form .detailsProduct .priceProduct .priceOld{
+  width: 100%;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.detailsContainer form .detailsProduct .priceProduct .priceNow{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 37px;
+  text-transform: uppercase;
+  font-weight: 500;
+  gap: 10px;
+}
+
+.detailsContainer form .detailsProduct .priceProduct .priceNow .descont{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #12f36c;
+}
+
+.detailsContainer form .detailsProduct .totalSelling{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  gap: 10px;
+}
+
+.detailsContainer form .detailsProduct .tamProduct{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  gap: 10px;
+}
+
+.detailsContainer form .detailsProduct .tamProduct select{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid #0000003a;
+}
+
+.detailsContainer form .detailsProduct .qtdProduct{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.detailsContainer form .detailsProduct .qtdProduct .qtd{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #0000003a;
+}
+
+.detailsContainer form .detailsProduct .qtdProduct .qtd select{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid #0000003a;
+}
+.detailsContainer form .detailsProduct .qtdProduct .qtd input{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  border: 1px solid #0000003a;
+}
+
+.detailsContainer form .detailsProduct .availableProduct{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.detailsContainer form .detailsProduct .availableProduct span{
+  padding: 7px;
+}
+
+.detailsContainer form .detailsProduct .btnFinal{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  gap: 5px;
+}
+
+.detailsContainer form .detailsProduct .btnFinal button{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.detailsContainer form .detailsProduct .btnFinal button:nth-child(1){
+  background-color: #0056bf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.detailsContainer form .detailsProduct .btnFinal button:nth-child(2){
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #0056bf;;
+  cursor: pointer;
+}
+
+.detailsContainer .descritionProducts{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.detailsContainer .descritionProducts h3{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.detailsContainer .descritionProducts p{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 900px) {
+  .detailsContainer form{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .detailsContainer{
+    padding: 7px;
+  }
+  .detailsContainer form{
+    width: 100%;
+  }
+  .detailsContainer form .imgsAmost{
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .detailsContainer form .imgsAmost .miniImgs{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .detailsContainer .descritionProducts{
+    width: 100%;
+  }
+}

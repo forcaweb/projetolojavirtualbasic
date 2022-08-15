@@ -1,0 +1,13 @@
+.page404Container{
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.page404Container h2{
+  font-size: 60px;
+  color: rgb(255, 71, 71);
+}

@@ -1,0 +1,181 @@
+.ordersContainer{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px 20px;
+  gap: 10px;
+}
+
+.ordersContainer .tittle{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 25px;
+}
+
+.ordersContainer .boxsProds{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.ordersContainer .boxsProds .itens{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 5px;
+}
+
+.ordersContainer .boxsProds .itens div{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  flex: 100%;
+}
+
+.ordersContainer .boxsProds .itens .imgProds{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.ordersContainer .boxsProds .itens .imgProds img{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  max-width: 80px;
+}
+
+.ordersContainer .boxsClient{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.ordersContainer .boxsClient div{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: 600;
+  flex: 50%;
+  color: #333;
+}
+
+.ordersContainer .boxsShipping{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.ordersContainer .boxsShipping div{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: 600;
+  flex: 50%;
+  color: #333;
+}
+
+.ordersContainer .boxsPaygment{
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.ordersContainer .boxsPaygment div{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 15px;
+  font-weight: 500;
+  flex: 50%;
+  color: #333;
+}
+.ordersContainer .boxsPaygment div a{
+  font-size: 14px;
+  color: rgb(28, 73, 234);
+}
+
+@media only screen and (max-width: 900px) {
+  .ordersContainer .boxsPaygment, .ordersContainer .boxsShipping, .ordersContainer .boxsClient, .ordersContainer .boxsProds .itens{
+    flex-wrap: wrap;
+  }
+  .ordersContainer .boxsPaygment div, .ordersContainer .boxsShipping div, .ordersContainer .boxsClient div{
+    flex: 100%;
+    padding: 10px;
+  }
+  .ordersContainer .boxsProds .itens{
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .ordersContainer .boxsProds .itens div{
+    flex: 100%;
+  }
+
+  .ordersContainer .boxsProds .itens .imgProds{
+    justify-content: flex-start;
+    border-radius: 0;
+    border: 1px solid #e3e3e3;
+  }
+  .ordersContainer .boxsProds .itens .imgProds img{
+    max-width: 100px;
+  }
+}

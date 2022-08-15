@@ -1,0 +1,268 @@
+/* Style Menu */
+.painelContainer{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  transition: 0.4s all;
+}
+
+.painelContainer .menuPainel{
+  position: absolute;
+  width: 100%;
+  max-width: 50px;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #fff;
+  z-index: 100;
+  padding: 15px;
+  height: 100%;
+  transition: 0.2s all;
+}
+
+.painelContainer .menuPainel .options{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.2s all;
+}
+
+.painelContainer .menuPainel .options a{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(90, 88, 88);
+  transition: 0.4s all;
+}
+.painelContainer .menuPainel .options a:hover{
+  color: #f74a4a;
+}
+.painelContainer .menuPainel .options a svg{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-right: 10px;
+  color: #c1bfbf;
+  object-fit: cover;
+}
+
+.painelContainer .menuPainel .options a span{
+  transition: 0.2s all !important;
+  font-size: 0px;
+  display: flex;
+  width: 0%;
+  overflow: hidden;
+}
+
+.painelContainer .pagesPainel{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.showAndHideText{
+  font-size: 14px !important;
+  width: 100% !important;
+}
+.expandMenu{
+  max-width: 250px !important;
+}
+
+/* Style Perfil */
+
+.perfilContainer{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s all;
+  overflow: hidden;
+  padding: 50px 20px;
+  gap: 10px;
+}
+
+.perfilContainer .infoClient{
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: 0.4s all;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.perfilContainer .infoClient img{
+  width: 100%;
+  max-width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.perfilContainer .infoClient .campText{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.perfilContainer .title{
+  width: 100%;
+  max-width: 900px;
+  font-size: 20px;
+  color: #333;
+}
+
+.perfilContainer .infoClient .campText h3{
+  color: rgb(52, 52, 52);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.perfilContainer .infoClient .campText p{
+  color: rgb(52, 52, 52);
+  font-size: 14px;
+}
+
+.perfilContainer .infoClient .campText a{
+  font-size: 12px;
+  background-color: #eee;
+  color: rgb(102, 102, 102);
+  padding: 10px 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #1515153a;
+  transition: 0.3s all;
+  overflow: hidden;
+}
+.perfilContainer .infoClient .campText a svg{
+  object-fit: cover;
+}
+
+.perfilContainer .infoClient .campText a:hover{
+  background-color: rgb(86, 192, 86);
+  color: rgb(255, 255, 255);
+}
+
+.perfilContainer .infoClient .campTextMobile{
+  display: none;
+}
+
+.perfilContainer .addAdress{
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.perfilContainer .addAdress a{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+  color: rgb(6, 77, 140);
+  transition: 0.4s all;
+}
+
+.perfilContainer .addAdress a:hover{
+  color: #f74a4a;
+}
+
+.perfilContainer .addAdress a svg{
+  margin-right: 10px;
+}
+
+.perfilContainer .infoClient .edit{
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.perfilContainer .infoClient .edit a:nth-child(2):hover{
+  background-color: #f74a4a;
+}
+
+@media only screen and (max-width: 900px) {
+  .perfilContainer{
+    padding: 10px 20px;
+  }
+  .painelContainer{
+    padding-left: 60px;
+  }
+
+  .perfilContainer .infoClient .campText{
+    width: 100%;
+  }
+
+  .perfilContainer .infoClient .campText h3{
+    color: rgb(52, 52, 52);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .perfilContainer .infoClient .campText p{
+    color: rgb(52, 52, 52);
+    font-size: 12px;
+  }
+
+  .perfilContainer .infoClient .edit{
+    display: none;
+  }
+
+  .perfilContainer .infoClient .campTextMobile{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(5, 28, 97);
+    padding: 7px;
+    border-radius: 6px;
+    gap: 10px;
+  }
+  .perfilContainer .infoClient .campTextMobile a{
+    font-size: 14px;
+    color: #fff;
+  }
+}
