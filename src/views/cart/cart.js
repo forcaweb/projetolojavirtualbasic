@@ -36,7 +36,7 @@ data.push({
 });
 
 data.push({
-  id: 4,
+  id: 5,
   img: imagens.logo,
   name: 'Site',
   qtd: 1,
@@ -59,75 +59,80 @@ function sumTotal() {
     style: 'currency',
     currency: 'BRL',
   });
-  console.log(data);
 }
 
 async function addSum(event) {
   event.preventDefault();
-  const qtd = document.querySelectorAll('.qtd');
   const indAdd = event.target.dataset.idAdd;
-  if (indAdd === undefined) return;
-  const indInput = await qtd[indAdd - 1].dataset.idQtd;
-  const qtdStmt = Number(qtd[indAdd - 1].value);
+  const qtd = document.getElementById(`${indAdd}`);
+  const isNumber = Number(qtd.value);
 
-  if (Number(qtd[indAdd - 1].value) > data[indAdd - 1].avai) {
-    qtd[indAdd - 1].value = Number(data[indAdd - 1].avai);
+  const index = data.findIndex((user) => user.id === Number(indAdd));
+
+  if (Number(qtd.value) > data[index].avai) {
+    qtd.value = Number(data[index].avai);
   }
 
-  if (Number(qtd[indAdd - 1].value) < 1) {
-    qtd[indAdd - 1].value = 1;
+  if (Number(qtd.value) < 1) {
+    qtd.value = 1;
   }
 
-  if (Number.isNaN(qtdStmt)) {
-    qtd[indAdd - 1].value = 1;
+  if (Number.isNaN(isNumber)) {
+    qtd.value = 1;
   }
 
-  if (Number(qtd[indAdd - 1].value) === data[indAdd - 1].avai) return;
-  if (indAdd === indInput) {
-    qtd[indAdd - 1].value = Number(qtd[indAdd - 1].value) + 1;
-    data[indAdd - 1].qtd = Number(qtd[indAdd - 1].value);
+  if (Number(qtd.value) === data[index].avai) return;
+
+  if (indAdd) {
+    qtd.value = Number(qtd.value) + 1;
+    data[index].qtd = Number(qtd.value);
   }
   sumTotal();
 }
 
 async function subSum(event) {
   event.preventDefault();
-  const qtd = document.querySelectorAll('.qtd');
   const indSub = event.target.dataset.idSub;
-  if (indSub === undefined) return;
-  const indInput = await qtd[indSub - 1].dataset.idQtd;
-  const qtdStmt = Number(qtd[indSub - 1].value);
-  if (Number(qtd[indSub - 1].value) > data[indSub - 1].avai) {
-    qtd[indSub - 1].value = Number(data[indSub - 1].avai);
+  const qtd = document.getElementById(`${indSub}`);
+  const isNumber = Number(qtd.value);
+
+  const index = data.findIndex((user) => user.id === Number(indSub));
+
+  if (Number(qtd.value) > data[index].avai) {
+    qtd.value = Number(data[index].avai);
   }
-  if (Number(qtd[indSub - 1].value) < 1) {
-    qtd[indSub - 1].value = 1;
+
+  if (Number.isNaN(isNumber)) {
+    qtd.value = 1;
   }
-  if (Number.isNaN(qtdStmt)) {
-    qtd[indSub - 1].value = 1;
-  }
-  if (Number(qtd[indSub - 1].value) === 1) return;
-  if (indSub === indInput) {
-    qtd[indSub - 1].value = Number(qtd[indSub - 1].value) - 1;
-    data[indSub - 1].qtd = Number(qtd[indSub - 1].value);
+
+  if (Number(qtd.value) === data[index].avai) return;
+
+  if (indSub) {
+    qtd.value = Number(qtd.value) - 1;
+    if (Number(qtd.value) < 1) {
+      qtd.value = 1;
+    }
+    data[index].qtd = Number(qtd.value);
   }
   sumTotal();
 }
 
 async function subSumInput(event) {
-  const qtd = document.querySelectorAll('.qtd');
-  const inputIndice = await event.target.dataset.idQtd;
-  const qtdStmt = Number(qtd[inputIndice - 1].value);
-  if (Number(qtd[inputIndice - 1].value) > data[inputIndice - 1].avai) {
-    qtd[inputIndice - 1].value = Number(data[inputIndice - 1].avai);
+  const inputIndice = await event.target.id;
+  const qtd = document.getElementById(inputIndice);
+  const index = data.findIndex((user) => user.id === Number(inputIndice));
+  const isNumber = Number(qtd.value);
+  if (Number(qtd.value) > data[index].avai) {
+    qtd.value = Number(data[index].avai);
   }
-  if (Number(qtd[inputIndice - 1].value) < 1) {
-    qtd[inputIndice - 1].value = 1;
+  if (Number(qtd.value) < 1) {
+    qtd.value = 1;
   }
-  if (Number.isNaN(qtdStmt)) {
-    qtd[inputIndice - 1].value = 1;
+  if (Number.isNaN(isNumber)) {
+    qtd.value = 1;
   }
-  data[inputIndice - 1].qtd = Number(qtd[inputIndice - 1].value);
+  data[index].qtd = Number(qtd.value);
   sumTotal();
 }
 
@@ -161,7 +166,7 @@ export function Cart() {
               <input
                 type='text'
                 name='qtd'
-                data-id-qtd={item.id}
+                id={item.id}
                 className='qtd'
                 placeholder={item.qtd}
                 defaultValue={item.qtd}
