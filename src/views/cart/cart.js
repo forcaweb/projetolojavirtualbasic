@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FiTrash } from 'react-icons/fi';
-import { Dash, Plus } from 'react-bootstrap-icons';
+// import { Dash, Plus } from 'react-bootstrap-icons';
 import { imagens } from '../../assets/img/imagens';
 import './cart.css';
 
@@ -54,10 +54,12 @@ function sumTotal() {
   }
   let result = priceFinal.reduce((total, num) => total + num);
   result += ship;
+  data.total = result;
   textPrice.innerHTML = result.toLocaleString('pt-br', {
     style: 'currency',
     currency: 'BRL',
   });
+  console.log(data);
 }
 
 async function addSum(event) {
@@ -66,12 +68,20 @@ async function addSum(event) {
   const indAdd = event.target.dataset.idAdd;
   if (indAdd === undefined) return;
   const indInput = await qtd[indAdd - 1].dataset.idQtd;
+  const qtdStmt = Number(qtd[indAdd - 1].value);
+
   if (Number(qtd[indAdd - 1].value) > data[indAdd - 1].avai) {
     qtd[indAdd - 1].value = Number(data[indAdd - 1].avai);
   }
+
   if (Number(qtd[indAdd - 1].value) < 1) {
     qtd[indAdd - 1].value = 1;
   }
+
+  if (Number.isNaN(qtdStmt)) {
+    qtd[indAdd - 1].value = 1;
+  }
+
   if (Number(qtd[indAdd - 1].value) === data[indAdd - 1].avai) return;
   if (indAdd === indInput) {
     qtd[indAdd - 1].value = Number(qtd[indAdd - 1].value) + 1;
@@ -86,10 +96,14 @@ async function subSum(event) {
   const indSub = event.target.dataset.idSub;
   if (indSub === undefined) return;
   const indInput = await qtd[indSub - 1].dataset.idQtd;
+  const qtdStmt = Number(qtd[indSub - 1].value);
   if (Number(qtd[indSub - 1].value) > data[indSub - 1].avai) {
     qtd[indSub - 1].value = Number(data[indSub - 1].avai);
   }
   if (Number(qtd[indSub - 1].value) < 1) {
+    qtd[indSub - 1].value = 1;
+  }
+  if (Number.isNaN(qtdStmt)) {
     qtd[indSub - 1].value = 1;
   }
   if (Number(qtd[indSub - 1].value) === 1) return;
@@ -103,10 +117,14 @@ async function subSum(event) {
 async function subSumInput(event) {
   const qtd = document.querySelectorAll('.qtd');
   const inputIndice = await event.target.dataset.idQtd;
+  const qtdStmt = Number(qtd[inputIndice - 1].value);
   if (Number(qtd[inputIndice - 1].value) > data[inputIndice - 1].avai) {
     qtd[inputIndice - 1].value = Number(data[inputIndice - 1].avai);
   }
   if (Number(qtd[inputIndice - 1].value) < 1) {
+    qtd[inputIndice - 1].value = 1;
+  }
+  if (Number.isNaN(qtdStmt)) {
     qtd[inputIndice - 1].value = 1;
   }
   data[inputIndice - 1].qtd = Number(qtd[inputIndice - 1].value);
@@ -131,8 +149,14 @@ export function Cart() {
               <h3>{item.name}</h3>
             </div>
             <div className='qtdProd'>
-              <button type='button' href='/' className='subQtd'>
-                <Dash data-id-sub={item.id} onClick={subSum} />
+              <button
+                type='button'
+                href='/'
+                className='subQtd'
+                data-id-sub={item.id}
+                onClick={subSum}
+              >
+                -
               </button>
               <input
                 type='text'
@@ -143,8 +167,14 @@ export function Cart() {
                 defaultValue={item.qtd}
                 onBlur={subSumInput}
               />
-              <button type='button' href='/' className='addQtd'>
-                <Plus data-id-add={item.id} onClick={addSum} />
+              <button
+                type='button'
+                href='/'
+                className='addQtd'
+                data-id-add={item.id}
+                onClick={addSum}
+              >
+                +
               </button>
             </div>
             <div className='priceProd'>
