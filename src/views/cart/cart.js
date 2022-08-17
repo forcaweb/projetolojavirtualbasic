@@ -44,6 +44,15 @@ data.push({
   avai: 50,
 });
 
+data.push({
+  id: 6,
+  img: imagens.logo,
+  name: 'Site',
+  qtd: 1,
+  price: 60.1,
+  avai: 50,
+});
+
 function sumTotal() {
   const textPrice = document.querySelector('.textPrice');
   const priceTotal = [];
@@ -106,8 +115,6 @@ async function subSum(event) {
     qtd.value = 1;
   }
 
-  if (Number(qtd.value) === data[index].avai) return;
-
   if (indSub) {
     qtd.value = Number(qtd.value) - 1;
     if (Number(qtd.value) < 1) {
@@ -154,6 +161,7 @@ export function Cart() {
               <h3>{item.name}</h3>
             </div>
             <div className='qtdProd'>
+              <span className='ballMsg'>QTD</span>
               <button
                 type='button'
                 href='/'
@@ -183,6 +191,7 @@ export function Cart() {
               </button>
             </div>
             <div className='priceProd'>
+              <span className='ballMsg'>Preço</span>
               <span className='price'>
                 <span className='pricevalue' data-price={item.price}>
                   {item.price.toLocaleString('pt-br', {
@@ -193,7 +202,8 @@ export function Cart() {
               </span>
             </div>
             <div className='priceProd'>
-              <span className='price'>Disp.: {item.avai}</span>
+              <span className='ballMsg'>Disp</span>
+              <span className='price'>({item.avai})</span>
             </div>
             <div className='deleteProd'>
               <span className='delete'>
