@@ -1,6 +1,19 @@
 import * as React from 'react';
 import './editperfil.css';
 
+const imgTemp = null;
+
+function editImage() {
+  const campAvatar = document.getElementById('avatar');
+  campAvatar.click();
+}
+
+function inputAvatar() {
+  const campAvatar = document.getElementById('avatar');
+  const img = document.getElementById('imgTemp');
+  img.setAttribute('src', campAvatar.value);
+}
+
 export function EditPerfil() {
   return (
     <div className='editPerfilContainer'>
@@ -11,20 +24,21 @@ export function EditPerfil() {
         encType='multipart/form-data'
         id='editPerfil'
       >
-        <div className='changeAvatar'>imagem.jpg</div>
-        <label className='btnEditAvatar' htmlFor='avatar'>
+        <div className='changeAvatar'>
+          <img id='imgTemp' src={imgTemp} alt='' />
+        </div>
+        <button type='button' className='btnEditAvatar' onClick={editImage}>
           Alterar foto
-        </label>
+        </button>
         <input
+          onChange={inputAvatar}
           id='avatar'
           type='file'
           name='avatar'
           accept='.jpg, .jpeg, .png'
         />
-
         <label htmlFor='name'>Nome</label>
         <input id='name' type='text' name='name' placeholder='Seu nome' />
-
         <label htmlFor='fastname'>Sobrenome</label>
         <input
           id='fastname'
@@ -32,13 +46,10 @@ export function EditPerfil() {
           name='fastname'
           placeholder='Seu sobrenome'
         />
-
         <label htmlFor='email'>Email</label>
         <input id='email' type='text' name='email' placeholder='Seu email' />
-
         <label htmlFor='phone'>Telefone</label>
         <input id='phone' type='text' name='phone' placeholder='Seu telefone' />
-
         <button type='submit'>Alterar senha</button>
       </form>
 
