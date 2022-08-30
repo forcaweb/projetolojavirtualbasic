@@ -1,18 +1,44 @@
 import * as React from 'react';
+import { verifyName } from '../../middleware/validationForms';
 import './editperfil.css';
 
 const imgTemp = null;
+
+const userData = [];
+
+userData.push({
+  nome: 'Diego',
+  sobrenome: 'Brito',
+  email: 'teste@teste.com',
+  phone: '84996338660',
+  cpf: '123.456.789.10',
+});
 
 function editImage() {
   const campAvatar = document.getElementById('avatar');
   campAvatar.click();
 }
 
-function inputAvatar() {
-  const campAvatar = document.getElementById('avatar');
-  const img = document.getElementById('imgTemp');
-  img.setAttribute('src', campAvatar.value);
+function formPerfil(e) {
+  e.preventDefault();
+  console.log(verifyName());
 }
+
+// async function inputAvatar() {
+//   const campAvatar = document.getElementById('avatar');
+//   // const img = document.getElementById('imgTemp');
+//   // img.setAttribute('src', campAvatar.files[0]);
+//   if (campAvatar.value === '') return;
+//   try {
+//     const r = await fetch('/imgs/', {
+//       method: 'POST',
+//       body: campAvatar.files[0].name,
+//     }).then((res) => res.json());
+//     console.log(r);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
 export function EditPerfil() {
   return (
@@ -31,26 +57,57 @@ export function EditPerfil() {
           Alterar foto
         </button>
         <input
-          onChange={inputAvatar}
+          // onChange={inputAvatar}
           id='avatar'
           type='file'
           name='avatar'
           accept='.jpg, .jpeg, .png'
         />
         <label htmlFor='name'>Nome</label>
-        <input id='name' type='text' name='name' placeholder='Seu nome' />
+        <input
+          id='name'
+          type='text'
+          name='name'
+          placeholder='Seu nome'
+          defaultValue={userData[0].nome}
+        />
         <label htmlFor='fastname'>Sobrenome</label>
         <input
           id='fastname'
           type='text'
           name='fastname'
           placeholder='Seu sobrenome'
+          defaultValue={userData[0].sobrenome}
+        />
+        <label htmlFor='cpf'>CPF</label>
+        <input
+          id='cpf'
+          type='text'
+          name='cpf'
+          placeholder='CPF'
+          defaultValue={userData[0].cpf}
+          disabled
         />
         <label htmlFor='email'>Email</label>
-        <input id='email' type='text' name='email' placeholder='Seu email' />
+        <input
+          id='email'
+          type='text'
+          name='email'
+          placeholder='Seu email'
+          defaultValue={userData[0].email}
+          disabled
+        />
         <label htmlFor='phone'>Telefone</label>
-        <input id='phone' type='text' name='phone' placeholder='Seu telefone' />
-        <button type='submit'>Alterar senha</button>
+        <input
+          id='phone'
+          type='text'
+          name='phone'
+          placeholder='Seu telefone'
+          defaultValue={userData[0].phone}
+        />
+        <button type='submit' onClick={formPerfil}>
+          Salvar Perfil
+        </button>
       </form>
 
       <div className='tittle'>Editar Senha</div>

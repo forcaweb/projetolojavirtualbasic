@@ -1,13 +1,35 @@
 import * as React from 'react';
 import './editadress.css';
 
+async function findAndress() {
+  const cepCamp = document.querySelector('#cep');
+  const match = /^[0-9]+$/gi;
+  if (cepCamp.value.length < 6) return;
+  if (!cepCamp.value.match(match)) return;
+  const cepFind = await fetch(
+    `http://viacep.com.br/ws/${cepCamp.value}/json/`,
+    {
+      method: 'GET',
+    },
+  )
+    .then((resp) => resp)
+    .then((obj) => obj.json());
+  console.log(cepFind);
+}
+
 export function EditAdress() {
   return (
     <div className='editPerfilContainer'>
       <div className='tittle'>Editar Endereço</div>
       <form method='POST' className='perfilForm' id='changeAdress'>
         <label htmlFor='cep'>CEP</label>
-        <input id='cep' type='text' name='cep' placeholder='Digite seu cep.' />
+        <input
+          onBlur={findAndress}
+          id='cep'
+          type='text'
+          name='cep'
+          placeholder='Digite seu cep.'
+        />
 
         <label htmlFor='locadouro'>Endereço</label>
         <input
