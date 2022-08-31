@@ -4,7 +4,7 @@ import './addadress.css';
 export function AddAdress() {
   return (
     <div className='editPerfilContainer'>
-      <div className='tittle'>Editar Endereço</div>
+      <div className='tittle'>Adicionar Endereço</div>
       <form method='POST' className='perfilForm' id='changeAdress'>
         <label htmlFor='cep'>CEP</label>
         <input id='cep' type='text' name='cep' placeholder='Digite seu cep.' />

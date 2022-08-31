@@ -3,18 +3,34 @@ import './editadress.css';
 
 async function findAndress() {
   const cepCamp = document.querySelector('#cep');
+  const cidadeCamp = document.querySelector('#cidade');
+  const locadouroCamp = document.querySelector('#locadouro');
+  const estadoCamp = document.querySelector('#estado');
+  const complementoCamp = document.querySelector('#complemento');
+  const bairroCamp = document.querySelector('#bairro');
   const match = /^[0-9]+$/gi;
-  if (cepCamp.value.length < 6) return;
+  if (cepCamp.value.length < 8) return;
+  if (cepCamp.value.length >= 9) return;
   if (!cepCamp.value.match(match)) return;
-  const cepFind = await fetch(
-    `http://viacep.com.br/ws/${cepCamp.value}/json/`,
-    {
-      method: 'GET',
+
+  await fetch(`http://viacep.com.br/ws/${cepCamp.value}/json/`, {
+    cors: {
+      origin: 'http://localhost',
+      methods: ['GET', 'POST'],
+      credentials: true,
+      transports: ['websocket', 'polling'],
     },
-  )
-    .then((resp) => resp)
-    .then((obj) => obj.json());
-  console.log(cepFind);
+    allowEIO3: true,
+  })
+    .then((resp) => resp.json())
+    .then((obj) => {
+      if (obj.erro) return;
+      cidadeCamp.value = obj.localidade;
+      locadouroCamp.value = obj.logradouro;
+      estadoCamp.value = obj.uf;
+      complementoCamp.value = obj.complemento;
+      bairroCamp.value = obj.bairro;
+    });
 }
 
 export function EditAdress() {
@@ -37,6 +53,14 @@ export function EditAdress() {
           type='text'
           name='locadouro'
           placeholder='Digite seu endereço.'
+        />
+
+        <label htmlFor='bairro'>Bairro</label>
+        <input
+          id='bairro'
+          type='text'
+          name='bairro'
+          placeholder='Digite seu bairro.'
         />
 
         <label htmlFor='cidade'>Cidade</label>
@@ -79,7 +103,9 @@ export function EditAdress() {
           placeholder='Digite seu pais.'
         />
 
-        <button type='submit'>Alterar endereço</button>
+        <button type='submit' id='btnadress'>
+          Alterar endereço
+        </button>
       </form>
     </div>
   );
