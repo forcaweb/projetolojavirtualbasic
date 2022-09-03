@@ -8,12 +8,17 @@ import './globalstyle/globalstyle.css';
 import Favicon from 'react-favicon';
 import { Menu } from './views/header/header';
 import App from './App';
+import { Footer } from './views/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Favicon url={`http://${window.location.host}/imgs/icon.png`} />
-    <Menu />
-    <App />
+    <>
+      <Favicon url={`http://${window.location.host}/imgs/icon.png`} />
+      <Menu />
+      <App />
+      <Footer />
+      <script src='https://sdk.mercadopago.com/js/v2' />
+    </>
   </React.StrictMode>,
 );
