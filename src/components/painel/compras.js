@@ -10,7 +10,7 @@ export function Compras() {
       </div>
       <div className='infoClient'>
         <div className='campText edit'>
-          <a href='/detalhes/pedidos/1' title='Detalhes'>
+          <a href='/details/ordes/1' title='Detalhes'>
             <CgDetailsMore />
           </a>
         </div>
@@ -32,7 +32,7 @@ export function Compras() {
           <p>Entregue</p>
         </div>
         <div className='campTextMobile'>
-          <a href='/detalhes/pedidos/1' title='Detalhes'>
+          <a href='/details/ordes/1' title='Detalhes'>
             <CgDetailsMore /> Detalhes
           </a>
         </div>

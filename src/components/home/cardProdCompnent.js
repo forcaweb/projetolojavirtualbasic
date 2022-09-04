@@ -37,7 +37,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/closet'>Ir ao produto</a>
+                <a href='/detailsproducts/closet'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -56,7 +56,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/others'>Ir ao produto</a>
+                <a href='/detailsproducts/others'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -75,7 +75,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/eletronic'>Ir ao produto</a>
+                <a href='/detailsproducts/eletronic'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -94,7 +94,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/others'>Ir ao produto</a>
+                <a href='/detailsproducts/others'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -132,7 +132,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/closet'>Ir ao produto</a>
+                <a href='/detailsproducts/closet'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -151,7 +151,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/others'>Ir ao produto</a>
+                <a href='/detailsproducts/others'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -170,7 +170,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/eletronic'>Ir ao produto</a>
+                <a href='/detailsproducts/eletronic'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>
@@ -189,7 +189,7 @@ export function CardProdComponent() {
                 <p className='shiping'>Frete Grátis</p>
               </div>
               <div className='linkProd'>
-                <a href='/detalhesdoproduto/others'>Ir ao produto</a>
+                <a href='/detailsproducts/others'>Ir ao produto</a>
               </div>
             </div>
           </SwiperSlide>

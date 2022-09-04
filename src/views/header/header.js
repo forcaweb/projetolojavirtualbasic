@@ -1,12 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
-import {
-  FaSearch,
-  FaHome,
-  FaCartArrowDown,
-  FaList,
-  FaBars,
-} from 'react-icons/fa';
+import { FaSearch, FaHome, FaCartArrowDown, FaBars } from 'react-icons/fa';
 import { IoIosArrowDown, IoMdPerson } from 'react-icons/io';
 import {
   AiOutlineClose,
@@ -107,7 +101,7 @@ export function Menu() {
           <a href='/painel/perfil'>
             <RiNewspaperFill /> Perfil
           </a>
-          <a href='/produtosfavoritos'>
+          <a href='/favorites'>
             <AiTwotoneHeart /> Produtos Favoritos
           </a>
         </div>
@@ -115,19 +109,17 @@ export function Menu() {
           <a href='/'>
             <FaHome /> Home
           </a>
-          <a href='/painel/pedidos'>
-            <FaList /> Meus Pedidos
-          </a>
-          <a href='/carrinhodecompra'>
+          <a href='/painel/orders'>Meus Pedidos</a>
+          <a href='/cart'>
             <FaCartArrowDown /> Carrinho de compra
           </a>
-          <a onClick={showCategory} href='/categoria'>
+          <a onClick={showCategory} href='/category'>
             <IoIosArrowDown /> Categorias
           </a>
           <a href='/sobre'>
             <AiOutlineQuestionCircle /> Sobre
           </a>
-          <a href='/contatos'>
+          <a href='/contact'>
             <GrContactInfo />
             Contatos
           </a>
@@ -165,17 +157,17 @@ export function Menu() {
             </div>
             <div className='searchHistory'>
               <li>
-                <a href='/produto/tenis'>
+                <a href='/product/tenis'>
                   <AiOutlineFieldTime /> Tenis
                 </a>
               </li>
               <li>
-                <a href='/produto/vaso'>
+                <a href='/product/vaso'>
                   <AiOutlineFieldTime /> Vaso
                 </a>
               </li>
               <li>
-                <a href='/produto/computador'>
+                <a href='/product/computador'>
                   <AiOutlineFieldTime /> Computador
                 </a>
               </li>
@@ -183,10 +175,8 @@ export function Menu() {
           </form>
         </div>
         <div className='options'>
-          <a href='/painel/meuspedidos'>
-            <FaList /> Meus Pedidos
-          </a>
-          <a href='/carrinhodecompra'>
+          <a href='/painel/myorders'>Meus Pedidos</a>
+          <a href='/cart'>
             <FaCartArrowDown />
           </a>
         </div>
@@ -197,9 +187,9 @@ export function Menu() {
           <a onClick={showCategory} href='/categoria'>
             <IoIosArrowDown /> Categorias
           </a>
-          <a href='/sobre'>Sobre</a>
-          <a href='/contatos'>Contatos</a>
-          <a href='/produtosfavoritos'>
+          <a href='/about'>Sobre</a>
+          <a href='/contact'>Contatos</a>
+          <a href='/favorites'>
             <AiTwotoneHeart /> Favoritos
           </a>
           <div className='btnLogin'>
@@ -216,17 +206,17 @@ export function Menu() {
       </header>
       <div className='listCategory'>
         <li>
-          <a href='/categoria/eletronico'>
+          <a href='/category/eletronico'>
             <RiArrowDropRightFill /> Eletronico
           </a>
         </li>
         <li>
-          <a href='/categoria/moda'>
+          <a href='/category/moda'>
             <RiArrowDropRightFill /> Moda
           </a>
         </li>
         <li>
-          <a href='/categoria/jardim'>
+          <a href='/category/jardim'>
             <RiArrowDropRightFill />
             Jardim
           </a>

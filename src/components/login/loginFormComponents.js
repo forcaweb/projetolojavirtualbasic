@@ -26,7 +26,7 @@ export function LoginFormComponents() {
           />
           <button type='submit'>Entrar</button>
           <li>
-            <a href='/cadastro'>Criar Conta</a>
+            <a href='/register'>Criar Conta</a>
           </li>
         </form>
       </div>

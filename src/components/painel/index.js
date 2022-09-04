@@ -34,13 +34,13 @@ export function Painel() {
           <a href='/painel/perfil'>
             <FaUserEdit /> <span>Perfil</span>
           </a>
-          <a href='/painel/meuspedidos'>
+          <a href='/painel/orders'>
             <CgShoppingBag /> <span>Meus Pedidos</span>
           </a>
-          <a href='/carrinhodecompra'>
+          <a href='/cart'>
             <TbShoppingCart /> <span>Carrinho de compra</span>
           </a>
-          <a href='/painel/compras'>
+          <a href='/painel/buying'>
             <GiShoppingBag /> <span>Compras</span>
           </a>
           <a onClick={logout} href='/'>

@@ -11,7 +11,7 @@ export function Perfil() {
       </div>
       <div className='infoClient'>
         <div className='campText edit'>
-          <a href='/editar/perfil/1' title='Editar Perfil'>
+          <a href='/edit/perfil/1' title='Editar Perfil'>
             <FiEdit2 />
           </a>
         </div>
@@ -33,7 +33,7 @@ export function Perfil() {
           <p>01/01/1900</p>
         </div>
         <div className='campTextMobile'>
-          <a href='/editar/perfil/1' title='Editar Perfil'>
+          <a href='/edit/perfil/1' title='Editar Perfil'>
             <FiEdit2 /> Editar
           </a>
         </div>
@@ -45,7 +45,7 @@ export function Perfil() {
 
       <div className='infoClient'>
         <div className='campText edit'>
-          <a href='/editar/enderecos/1' title='Editar Endereços'>
+          <a href='/edit/adress/1' title='Editar Endereços'>
             <FiEdit2 />
           </a>
           <a href='/delete/endereco' title='Deletar Endereços'>
@@ -73,7 +73,7 @@ export function Perfil() {
           <p>Brasil</p>
         </div>
         <div className='campTextMobile'>
-          <a href='/editar/enderecos/1' title='Editar Perfil'>
+          <a href='/edit/adress/1' title='Editar Perfil'>
             <FiEdit2 /> Editar
           </a>
           <a href='/delete/endereco' title='Deletar Endereços'>
@@ -83,7 +83,7 @@ export function Perfil() {
       </div>
 
       <div className='addAdress'>
-        <a href='/editar/adicionarendereco'>
+        <a href='/edit/addadress'>
           <AiOutlinePlusCircle /> Adicionar novo endereço.
         </a>
       </div>

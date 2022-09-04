@@ -9,8 +9,8 @@ export function PainelComponents() {
   const routesPages = () => {
     const { p } = useParams();
     if (p === 'perfil') return <Perfil />;
-    if (p === 'meuspedidos') return <Pedidos />;
-    if (p === 'compras') return <Compras />;
+    if (p === 'orders') return <Pedidos />;
+    if (p === 'buying') return <Compras />;
     return <Perfil />;
   };
   return routesPages();
