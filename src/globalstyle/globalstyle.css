@@ -26,3 +26,17 @@ html, body, #root{
   width: 100%;
   min-height: 100vh;
 }
+
+#msgErro{
+  border: 2px dashed #53abf9be;
+  background: #53abf9be;
+  color: #333;
+  padding: 10px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.msgErroActive{
+  border: 2px dashed #fd3d3dbe !important;
+  background: #f95353be !important;
+}

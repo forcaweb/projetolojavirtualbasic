@@ -4,7 +4,7 @@ import { cpf, cnpj } from 'cpf-cnpj-validator';
 // ACEITA SO STRING
 export function onlyString(name, strObjet) {
   const strObj = strObjet;
-  const stmtstr = strObj.value.trim();
+  const stmtstr = strObj.trim();
   const match = /^[a-záàâãéèêíïóôõöúçñ]+$/gi;
   if (!stmtstr) {
     return `O campo ${name} não pode ser vázios.`;
@@ -19,7 +19,7 @@ export function onlyString(name, strObjet) {
 // ACEITA SO STRING E NÚMEROS
 export function onlyStringAndNumbers(name, strObjet) {
   const strObj = strObjet;
-  const stmtstr = strObj.value.trim();
+  const stmtstr = strObj.trim();
   const match = /^[a-záàâãéèêíïóôõöúçñ0-9]+$/gi;
   if (!stmtstr) {
     return `O campo ${name} não pode ser vázios.`;
@@ -34,7 +34,7 @@ export function onlyStringAndNumbers(name, strObjet) {
 // ACEITA SO LINKS
 export function onlyLinks(name, strObjet) {
   const strObj = strObjet;
-  const stmtstr = strObj.value.trim();
+  const stmtstr = strObj.trim();
   const match = /^[a-z/:.]+$/gi;
   if (!stmtstr) {
     return `O campo ${name} não pode ser vázios.`;
@@ -49,7 +49,7 @@ export function onlyLinks(name, strObjet) {
 // ACEITA APENAS NÚMEROS
 export function onlyNumbers(name, numObjet) {
   const nmbObj = numObjet;
-  const stmtnmb = nmbObj.value.trim();
+  const stmtnmb = nmbObj.trim();
   const match = /^[0-9]+$/gi;
   if (!stmtnmb) {
     return `O campo ${name} não pode ser vázios.`;
@@ -64,7 +64,7 @@ export function onlyNumbers(name, numObjet) {
 // ACEITA SO EMAIL
 export function onlyEmail(name, emailObjet) {
   const Obj = emailObjet;
-  const stmtobj = Obj.value.trim();
+  const stmtobj = Obj.trim();
   if (!stmtobj) {
     return `O campo ${name} não pode ser vázios.`;
   }
@@ -78,7 +78,7 @@ export function onlyEmail(name, emailObjet) {
 // ACEITA SO CEP
 export function onlyCep(name, cepObjet) {
   const Obj = cepObjet;
-  const stmtobj = Obj.value.trim();
+  const stmtobj = Obj.trim();
   const match = /^[0-9-]+$/gi;
   if (!stmtobj) {
     return `O campo ${name} não pode ser vázios.`;
@@ -93,7 +93,7 @@ export function onlyCep(name, cepObjet) {
 // ACEITA SO CPF
 export function onlyCpfOrCnpj(name, Objet) {
   const Obj = Objet;
-  const stmtobj = Obj.value.trim();
+  const stmtobj = Obj.trim();
   let res = '';
   // verifica cnpj
   if (stmtobj.length > 11) {
