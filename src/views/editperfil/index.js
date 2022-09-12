@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { verifyName } from '../../middleware/validationForms';
 import './editperfil.css';
 
 const imgTemp = null;
@@ -21,7 +20,6 @@ function editImage() {
 
 function formPerfil(e) {
   e.preventDefault();
-  console.log(verifyName());
 }
 
 // async function inputAvatar() {

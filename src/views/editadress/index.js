@@ -95,14 +95,6 @@ export function EditAdress() {
           placeholder='Digite o complemento.'
         />
 
-        <label htmlFor='pais'>País</label>
-        <input
-          id='pais'
-          type='text'
-          name='pais'
-          placeholder='Digite seu pais.'
-        />
-
         <button type='submit' id='btnadress'>
           Alterar endereço
         </button>

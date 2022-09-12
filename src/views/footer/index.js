@@ -25,7 +25,8 @@ export function Footer() {
       </div>
       <div className='campsFooterCredits'>
         <p>
-          Web desenvolvida por Força Web. Versão: 1.3 © 2018 - 2022,
+          Web desenvolvida por Força Web. Versão:{' '}
+          {process.env.REACT_APP_VERSION_PROJET} © 2018 - 2022,
           www.forcaweb.net.
         </p>
       </div>

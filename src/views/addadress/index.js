@@ -1,13 +1,51 @@
 import * as React from 'react';
 import './addadress.css';
 
+async function findAndress() {
+  const cepCamp = document.querySelector('#cep');
+  const cidadeCamp = document.querySelector('#cidade');
+  const locadouroCamp = document.querySelector('#locadouro');
+  const estadoCamp = document.querySelector('#estado');
+  const complementoCamp = document.querySelector('#complemento');
+  const bairroCamp = document.querySelector('#bairro');
+  const match = /^[0-9]+$/gi;
+  if (cepCamp.value.length < 8) return;
+  if (cepCamp.value.length >= 9) return;
+  if (!cepCamp.value.match(match)) return;
+
+  await fetch(`http://viacep.com.br/ws/${cepCamp.value}/json/`, {
+    cors: {
+      origin: 'http://localhost',
+      methods: ['GET', 'POST'],
+      credentials: true,
+      transports: ['websocket', 'polling'],
+    },
+    allowEIO3: true,
+  })
+    .then((resp) => resp.json())
+    .then((obj) => {
+      if (obj.erro) return;
+      cidadeCamp.value = obj.localidade;
+      locadouroCamp.value = obj.logradouro;
+      estadoCamp.value = obj.uf;
+      complementoCamp.value = obj.complemento;
+      bairroCamp.value = obj.bairro;
+    });
+}
+
 export function AddAdress() {
   return (
     <div className='editPerfilContainer'>
       <div className='tittle'>Adicionar Endereço</div>
       <form method='POST' className='perfilForm' id='changeAdress'>
         <label htmlFor='cep'>CEP</label>
-        <input id='cep' type='text' name='cep' placeholder='Digite seu cep.' />
+        <input
+          onChange={findAndress}
+          id='cep'
+          type='text'
+          name='cep'
+          placeholder='Digite seu cep.'
+        />
 
         <label htmlFor='locadouro'>Endereço</label>
         <input
@@ -47,14 +85,6 @@ export function AddAdress() {
           type='text'
           name='complemento'
           placeholder='Digite o complemento.'
-        />
-
-        <label htmlFor='pais'>País</label>
-        <input
-          id='pais'
-          type='text'
-          name='pais'
-          placeholder='Digite seu pais.'
         />
 
         <button type='submit'>Adicionar endereço</button>
