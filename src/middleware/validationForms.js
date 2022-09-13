@@ -5,7 +5,7 @@ import { cpf, cnpj } from 'cpf-cnpj-validator';
 export function onlyString(name, strObjet) {
   const strObj = strObjet;
   const stmtstr = strObj.trim();
-  const match = /^[a-záàâãéèêíïóôõöúçñ]+$/gi;
+  const match = /^[&a-záàâãéèêíïóôõöúçñ ]+$/gi;
   if (!stmtstr) {
     return `O campo ${name} não pode ser vázios.`;
   }
@@ -20,13 +20,27 @@ export function onlyString(name, strObjet) {
 export function onlyStringAndNumbers(name, strObjet) {
   const strObj = strObjet;
   const stmtstr = strObj.trim();
-  const match = /^[a-záàâãéèêíïóôõöúçñ0-9]+$/gi;
+  const match = /^[&a-záàâãéèêíïóôõöúçñ0-9 ]+$/gi;
   if (!stmtstr) {
     return `O campo ${name} não pode ser vázios.`;
   }
 
   if (!stmtstr.match(match)) {
-    return `O campo ${name} so aceita letras.`;
+    return `O campo ${name} so aceita letras e números.`;
+  }
+  return true;
+}
+
+// ACEITA SO STRING E NÚMEROS OPCIONAL
+export function onlyStringAndNumbersOptional(name, strObjet) {
+  const strObj = strObjet;
+  const stmtstr = strObj.trim();
+  const match = /^[&a-záàâãéèêíïóôõöúçñ0-9 ]+$/gi;
+
+  if (stmtstr.length > 1) {
+    if (!stmtstr.match(match)) {
+      return `O campo ${name} so aceita letras e números.`;
+    }
   }
   return true;
 }
