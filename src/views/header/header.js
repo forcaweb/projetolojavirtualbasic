@@ -175,7 +175,7 @@ export function Menu() {
           </form>
         </div>
         <div className='options'>
-          <a href='/painel/myorders'>Meus Pedidos</a>
+          <a href='/painel/orders'>Meus Pedidos</a>
           <a href='/cart'>
             <FaCartArrowDown />
           </a>

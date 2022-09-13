@@ -48,7 +48,7 @@ export function RegisterFormComponents() {
             type='password'
             placeholder='Digite sua senha.'
           />
-          <button type='submit'>Entrar</button>
+          <button type='submit'>Registrar</button>
           <li>
             <a href='/login'>Logar Conta</a>
           </li>

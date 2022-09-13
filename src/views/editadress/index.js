@@ -1,17 +1,89 @@
 import * as React from 'react';
+import {
+  validCep,
+  validAddress,
+  validCity,
+  validDistrict,
+  validState,
+  validComplement,
+  validNum,
+} from '../../middleware/andressForm';
 import './editadress.css';
 
-async function findAndress() {
+const btnAndress = document.querySelector('#btnAndress');
+if (btnAndress) btnAndress.disabled = true;
+
+function checkFields() {
+  const msg = document.querySelector('#msgErro');
   const cepCamp = document.querySelector('#cep');
   const cidadeCamp = document.querySelector('#cidade');
   const locadouroCamp = document.querySelector('#locadouro');
   const estadoCamp = document.querySelector('#estado');
   const complementoCamp = document.querySelector('#complemento');
   const bairroCamp = document.querySelector('#bairro');
-  const match = /^[0-9]+$/gi;
-  if (cepCamp.value.length < 8) return;
-  if (cepCamp.value.length >= 9) return;
-  if (!cepCamp.value.match(match)) return;
+  const numeroCamp = document.querySelector('#numero');
+  if (!cepCamp.value.length > 10) return;
+  if (validCep(cepCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validCep(cepCamp.value));
+    return;
+  }
+
+  if (validAddress(locadouroCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validAddress(locadouroCamp.value));
+    return;
+  }
+
+  if (validCity(cidadeCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validCity(cidadeCamp.value));
+    return;
+  }
+
+  if (validState(estadoCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validState(estadoCamp.value));
+    return;
+  }
+
+  if (validDistrict(bairroCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validDistrict(bairroCamp.value));
+    return;
+  }
+
+  if (validComplement(complementoCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validComplement(complementoCamp.value));
+    return;
+  }
+
+  if (validNum(numeroCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validNum(numeroCamp.value));
+    return;
+  }
+  msg.innerHTML = 'Correto!';
+  msg.setAttribute('class', '');
+}
+
+async function findAndress() {
+  const msg = document.querySelector('#msgErro');
+  const cepCamp = document.querySelector('#cep');
+  const cidadeCamp = document.querySelector('#cidade');
+  const locadouroCamp = document.querySelector('#locadouro');
+  const estadoCamp = document.querySelector('#estado');
+  const complementoCamp = document.querySelector('#complemento');
+  const bairroCamp = document.querySelector('#bairro');
+  if (!cepCamp.value.length > 10) return;
+  if (validCep(cepCamp.value) !== true) {
+    msg.setAttribute('class', 'msgErroActive');
+    msg.innerHTML = String(validCep(cepCamp.value));
+    return;
+  }
+  msg.innerHTML = 'Correto!';
+  msg.setAttribute('class', '');
 
   await fetch(`http://viacep.com.br/ws/${cepCamp.value}/json/`, {
     cors: {
@@ -37,10 +109,16 @@ export function EditAdress() {
   return (
     <div className='editPerfilContainer'>
       <div className='tittle'>Editar Endereço</div>
-      <form method='POST' className='perfilForm' id='changeAdress'>
+      <form
+        onBlur={checkFields}
+        method='POST'
+        className='perfilForm'
+        id='changeAdress'
+      >
+        <small id='msgErro'>Preencha os campos corretamente!</small>
         <label htmlFor='cep'>CEP</label>
         <input
-          onBlur={findAndress}
+          onChange={findAndress}
           id='cep'
           type='text'
           name='cep'

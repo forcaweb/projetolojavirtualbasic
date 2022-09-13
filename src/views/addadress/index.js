@@ -110,7 +110,7 @@ export function AddAdress() {
     <div className='editPerfilContainer'>
       <div className='tittle'>Adicionar Endereço</div>
       <form
-        onChange={checkFields}
+        onBlur={checkFields}
         method='POST'
         className='perfilForm'
         id='changeAdress'
