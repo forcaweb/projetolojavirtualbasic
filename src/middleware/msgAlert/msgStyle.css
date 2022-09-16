@@ -1,0 +1,97 @@
+.alertContainer{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999999999;
+}
+
+.alertContainer .content{
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.alertContainer .content .titlle{
+  width: 100%;
+  position: relative;
+  background-color: rgb(238, 79, 79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.alertContainer .content .titlle h3{
+  color: #fff;
+  font-size: 35px;
+}
+
+.alertContainer .content .text{
+  width: 100%;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.alertContainer .content .text p{
+  color: rgb(54, 53, 53);
+  font-size: 20px;
+}
+
+.alertContainer .content .result{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+  gap: 30px;
+}
+
+.alertContainer .content .result #yes{
+  color: rgb(251, 251, 251);
+  font-size: 20px;
+  background-color: rgb(3, 113, 23);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.alertContainer .content .result #yes:hover{
+  background-color: rgb(29, 155, 52);
+}
+
+.alertContainer .content .result #no{
+  color: rgb(251, 251, 251);
+  font-size: 20px;
+  background-color: rgb(203, 14, 36);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.alertContainer .content .result #no:hover{
+  background-color: rgb(223, 49, 69);
+}

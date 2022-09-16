@@ -8,6 +8,7 @@ import {
   validComplement,
   validNum,
 } from '../../middleware/andressForm';
+import { MsgAlert } from '../../middleware/msgAlert/msgAlert';
 import './addadress.css';
 
 const btnAndress = document.querySelector('#btnAndress');
@@ -108,6 +109,7 @@ async function findAndress() {
 export function AddAdress() {
   return (
     <div className='editPerfilContainer'>
+      <MsgAlert />
       <div className='tittle'>Adicionar Endereço</div>
       <form
         onBlur={checkFields}

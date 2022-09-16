@@ -1,7 +1,6 @@
 import * as React from 'react';
+import { imagens } from '../../assets/img/imagens';
 import './editperfil.css';
-
-const imgTemp = null;
 
 const userData = [];
 
@@ -11,6 +10,7 @@ userData.push({
   email: 'teste@teste.com',
   phone: '84996338660',
   cpf: '123.456.789.10',
+  avatar: imagens.logo,
 });
 
 function editImage() {
@@ -22,21 +22,12 @@ function formPerfil(e) {
   e.preventDefault();
 }
 
-// async function inputAvatar() {
-//   const campAvatar = document.getElementById('avatar');
-//   // const img = document.getElementById('imgTemp');
-//   // img.setAttribute('src', campAvatar.files[0]);
-//   if (campAvatar.value === '') return;
-//   try {
-//     const r = await fetch('/imgs/', {
-//       method: 'POST',
-//       body: campAvatar.files[0].name,
-//     }).then((res) => res.json());
-//     console.log(r);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
+async function inputAvatar() {
+  const campAvatar = document.getElementById('avatar');
+  // const img = document.getElementById('imgTemp');
+  // img.setAttribute('src', campAvatar.files[0]);
+  console.log(campAvatar.files[0]);
+}
 
 export function EditPerfil() {
   return (
@@ -49,13 +40,13 @@ export function EditPerfil() {
         id='editPerfil'
       >
         <div className='changeAvatar'>
-          <img id='imgTemp' src={imgTemp} alt='' />
+          <img id='imgTemp' src={userData[0].avatar} alt='' />
+          <button type='button' className='btnEditAvatar' onClick={editImage}>
+            Alterar foto
+          </button>
         </div>
-        <button type='button' className='btnEditAvatar' onClick={editImage}>
-          Alterar foto
-        </button>
         <input
-          // onChange={inputAvatar}
+          onChange={inputAvatar}
           id='avatar'
           type='file'
           name='avatar'
